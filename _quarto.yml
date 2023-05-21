@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "AnimeWebsite"
+  navbar:
+    left:
+      - href: introduction.md
+        text: Home
+      - src/exploracion_inicial.ipynb
+      - src/top_lists.ipynb
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

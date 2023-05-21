@@ -1,0 +1,7 @@
+# Repository configuration
+
+data:
+  main: "data/anime_transform.csv"
+  cat_genres: "data/cat_genres.csv"
+  cat_themes: "data/cat_themes.csv"
+

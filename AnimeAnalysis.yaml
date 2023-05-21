@@ -1,0 +1,38 @@
+name: AnimeAnalytics
+channels:
+  - conda-forge
+  - defaults
+  - r
+dependencies:
+  - python=3.10
+  - r-base=4.0.3
+  - r-irkernel
+  - r-tidyverse
+  - r-kableExtra
+  - r-formattable
+  - r-DT
+  - r-reticulate
+  - r-stargazer
+  - r-plotly
+  - scikit-learn
+  - pandas
+  - numpy
+  - pytest
+  - ipython
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - plotly
+  - pylint
+  - autopep8
+  - joblib
+  - lxml
+  - boto3
+  - awswrangler
+  - scikit-learn
+  - fuzzywuzzy
+  - pyspark
+  - pandasgui
+  - qgrid
+
