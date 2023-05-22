@@ -4,4 +4,9 @@ data:
   main: "data/anime_transform.csv"
   cat_genres: "data/cat_genres.csv"
   cat_themes: "data/cat_themes.csv"
+  preprocesados_x: "data/xtest.csv"
+  preprocesados_y: "data/ytest.csv"
+
+modelos: "modelos/"
+gs_best_model_name: "mejor_modelo.pkl"
 
