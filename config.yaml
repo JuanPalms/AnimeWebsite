@@ -10,3 +10,12 @@ data:
 modelos: "modelos/"
 gs_best_model_name: "mejor_modelo.pkl"
 
+clustering:
+   numerical_variables: ['score', 'number_episodes', 'members','action', 'adventure', 'comedy','drama', 
+                         'ecchi', 'fantasy', 'horror', 'mystery', 'romance', 'sci_fi','slice_of_life', 'sports', 'supernatural']
+   categorical_variables: ['studio','demographics', 'emission_type','month']
+   segmentation_variables: ['score', 'studio', 'number_episodes', 'demographics', 'emission_type',
+       'month', 'members', 'action', 'adventure', 'comedy', 'drama', 'ecchi',
+       'fantasy', 'horror', 'mystery', 'romance', 'sci_fi', 'slice_of_life',
+       'sports', 'supernatural']
+   preprocessor_name: "datos_preprocesados.pkl"
