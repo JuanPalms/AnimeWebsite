@@ -87,7 +87,7 @@ def preprocessing(data):
     numerical_variables = config_f["clustering"]["numerical_variables"]
     categorical_variables = config_f["clustering"]["categorical_variables"]
     #Definir index de las variables categoricas
-    cat_column = [1,3,4,5]
+    cat_column = [3,4,5,6,7,8,9,10,11,12,13,14,15]
     segmentacion_kprototypes=segmentacion[config_f["clustering"]["segmentation_variables"]]
     ## Define transformers for each type of variable
     categorical_transformer = Pipeline(

@@ -6,6 +6,7 @@ data:
   cat_themes: "data/cat_themes.csv"
   preprocesados_x: "data/xtest.csv"
   preprocesados_y: "data/ytest.csv"
+  clusters: "data/clusters"
 
 modelos: "modelos/"
 gs_best_model_name: "mejor_modelo.pkl"
@@ -20,3 +21,6 @@ clustering:
        'drama and romance', 'adventure and fantasy', 'mystery and horror',
        'sci_fi and supernatural']
    preprocessor_name: "datos_preprocesados.pkl"
+   number_clusters: 3
+   n_init: 3
+   usable_cores: -2
