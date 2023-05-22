@@ -48,8 +48,12 @@ def preprocessing(data):
     # Crea un conjunto de los estudios que aparecen 2 veces o menos
     rare_studios = set(studio_counts[studio_counts <= 30].index)
     datos['studio'] = datos['studio'].apply(lambda x: 'otros_estudios' if x in rare_studios else x)
+    datos['month'].fillna(datos['month'].mode()[0], inplace=True)
+    datos['number_episodes'].fillna(datos['number_episodes'].mean(), inplace=True)
     datos['genres'] = datos['genres'].str.split(',').apply(lambda x: [i.strip() for i in x])
-    
+    to_assemble=['kids', 'kids,_shounen','kids,_shoujo']
+    print()
+    datos['demographics'] = datos['demographics'].apply(lambda x: 'kids' if x in to_assemble else x)
     # Ahora convertimos las listas de géneros nuevamente a cadenas separadas por comas
     datos['genres'] = datos['genres'].apply(lambda x: ','.join(x))
     # Ahora, utiliza get_dummies para codificar las columnas
@@ -59,6 +63,26 @@ def preprocessing(data):
     columns_to_drop = sums[sums < 115].index
     # Eliminar esas columnas del DataFrame
     genres_encoded = genres_encoded.drop(columns=columns_to_drop)
+
+
+    # Define the genre groupings
+    drama = ["drama","romance"]
+    adventure = ["adventure","fantasy"]
+    mystery = ["mystery","horror"]
+    sci_fi = ["sci_fi","supernatural"]
+
+    # Merge the columns for each category
+    genres_encoded['drama and romance'] = genres_encoded[drama].sum(axis=1)
+    genres_encoded['adventure and fantasy'] = genres_encoded[adventure].sum(axis=1)
+    genres_encoded['mystery and horror'] = genres_encoded[mystery].sum(axis=1)
+    genres_encoded['sci_fi and supernatural'] = genres_encoded[sci_fi].sum(axis=1)
+
+    # Drop the original columns
+    for genre in drama + adventure + mystery + sci_fi:
+        if genre in genres_encoded.columns:
+            genres_encoded = genres_encoded.drop(columns=genre)
+
+    
     segmentacion = pd.concat([datos[['score','studio','number_episodes', 'demographics','emission_type','month','members']], genres_encoded], axis=1)
     numerical_variables = config_f["clustering"]["numerical_variables"]
     categorical_variables = config_f["clustering"]["categorical_variables"]
