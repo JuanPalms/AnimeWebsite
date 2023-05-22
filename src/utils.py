@@ -68,7 +68,7 @@ def tabulacion(df, selected_columns, top_margin=10, bottom_margin=10, left_margi
     cells=dict(
         values=[df[col] for col in selected_columns],
         line_color='darkslategray',
-        fill=dict(color=['lightcyan', 'white']),
+        fill=dict(color=['lightgrey', 'white']),
         align='left',
         font=dict(color='darkslategray', size=11, family="Arial"),
         height=30
@@ -85,7 +85,8 @@ def tabulacion(df, selected_columns, top_margin=10, bottom_margin=10, left_margi
             b=bottom_margin,
             t=top_margin,
             pad=5
-        )
+        ),
+        paper_bgcolor='lightgrey'
     )
     
     fig.show()
@@ -102,3 +103,61 @@ def apply_format(df):
                      "members": "Popularidad", "genres": "Género","year":"Año"})
     return(df2)
 
+
+
+def impute_missing_drop_columns(df,numerical,nominal):
+    """
+    Function to impute missing values with median or mode to features containing less
+    than 50% of missing values and drops the columns with more than 50% of missing values
+    Args:
+        df (pandas dataframe): dataframe
+        numerical (list):   list of numerical attributes
+        nominal   (list):   list of nominal attributes
+    Returns:
+        df (pandas dataframe): dataframe
+        numerical (list):   modified list of numerical attributes
+        nominal   (list):   modified list of nominal attributes
+        """
+    # check for null values
+    null_val = (df.isnull()
+                # sum of null values
+                    .sum()
+                # sort values in descending order
+                    .sort_values(ascending=False)
+                # reset index
+                    .reset_index())
+    #rename columns
+    null_val.columns = ['attribute','count']
+    #Add percentage of null values column
+    null_val['percentage']=(null_val['count']/df.shape[0])
+
+
+    # iterate through df to impute median or mode
+    to_remove=[]
+    for index,row in null_val.iterrows():
+        # if percentage of nulls between 0 and 30%
+        if 0<row["percentage"]<=.3:
+            # print attribute and percentage of nulls
+            logging.debug(f'{row["attribute"]} has {row["percentage"]*100} percent of null values')
+            #deal with numerical attributes
+            if row["attribute"] in numerical:
+                # impute median
+                df.loc[(df[row['attribute']].isnull()==True),
+                       row['attribute']]=df[row['attribute']].median()
+            # impute mode to nominal and ordinal variables
+            elif row["attribute"] not in numerical:
+                df.loc[(df[row['attribute']].isnull()==True),
+                       row['attribute']]=df[row["attribute"]].mode(dropna=True)[0]
+                # if percentage is greater than 30% remove columns
+        elif row["percentage"]>.3:
+            to_remove.append(row["attribute"])
+        else:
+            continue
+
+    remove = set(to_remove)
+    numerical = [x for x in numerical if x not in remove]
+    nominal = [x for x in nominal if x not in remove]
+    df.drop(columns=to_remove, inplace=True)
+
+
+    return df,numerical,nominal

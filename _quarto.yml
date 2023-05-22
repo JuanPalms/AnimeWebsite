@@ -9,10 +9,11 @@ website:
         text: Home
       - src/exploracion_inicial.ipynb
       - src/top_lists.ipynb
+      - src/xgboost_predictions.ipynb
 
 format:
   html:
-    theme: cosmo
+    theme: quartz
     css: styles.css
     toc: true
 
