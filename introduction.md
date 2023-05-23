@@ -2,7 +2,7 @@
 
 # **AAA: Applied Anime Analytics** 📊🎥
 
-¡Bienvenido@s, al increíble mundo de la animación japonesa! 🌟
+¡Bienvenid@s, al increíble mundo de la animación japonesa! 🌟
 
 Este sitio web te mostrará todo lo que siempre quisiste saber sobre el universo del anime pero nunca te atreviste a preguntar. ¡Prepárate para un buen rato de conocimientos sobre anime!
 
