@@ -10,6 +10,7 @@ website:
       - src/exploracion_inicial.ipynb
       - src/top_lists.ipynb
       - src/xgboost_predictions.ipynb
+      - src/faq.ipynb
 
 format:
   html:
