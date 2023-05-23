@@ -12,6 +12,7 @@ Aquí implementamos el análisis y desplegamos una página web en un entorno de 
 - `modelos`: directorio que contiene los modelos y archivos relacionados utilizados en el análisis.
 - `src`: directorio que contiene el código fuente del proyecto.
 - `styles.css`: archivo CSS para el diseño de la página web.
+- `PDF`: Working backwards, frequent asked questions y arquitectura del proyecto.
 
 ## Instrucciones para el uso del Repositorio
 
