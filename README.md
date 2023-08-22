@@ -14,6 +14,11 @@ Aquí implementamos el análisis y desplegamos una página web en un entorno de 
 - `styles.css`: archivo CSS para el diseño de la página web.
 - `PDF`: Working backwards, frequent asked questions y arquitectura del proyecto.
 
+## DEMO
+
+![](https://github.com/JuanPalms/AnimeWebsite/blob/main/GIF_anime.gif)
+
+
 ## Instrucciones para el uso del Repositorio
 
 1. Clona este repositorio en tu máquina local.
