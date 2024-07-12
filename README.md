@@ -1,5 +1,7 @@
 # Anime Website
 
+This project is a comprehensive data science implementation focusing on anime data. It spans from data extraction through web scraping of MyAnimeList to deploying a web page in a Quarto environment. This project demonstrates the full data workflow, from acquisition to deployment, providing a transparent and replicable approach for anime data enthusiasts. 
+
 
 This repository contains the second part of the Data Architecture course project for the MCD.
 
