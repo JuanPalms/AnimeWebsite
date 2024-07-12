@@ -1,41 +1,44 @@
 # Anime Website
 
-Este repositorio contiene la segunda parte del proyecto de la materia de arquitectura de datos de la MCD.
 
-Aquí implementamos el análisis y desplegamos una página web en un entorno de Quarto.
+This repository contains the second part of the Data Architecture course project for the MCD.
 
-## Contenido del Repositorio
+Here we implement the analysis and deploy a web page in a Quarto environment.
 
-- `AnimeAnalysis.yaml`: archivo de entorno conda para el proyecto.
-- `config.yaml`: archivo de configuración del proyecto.
-- `data`: directorio para almacenar los datos utilizados en el análisis.
-- `modelos`: directorio que contiene los modelos y archivos relacionados utilizados en el análisis.
-- `src`: directorio que contiene el código fuente del proyecto.
-- `styles.css`: archivo CSS para el diseño de la página web.
-- `PDF`: Working backwards, frequent asked questions y arquitectura del proyecto.
+## Repository Content
+
+- `AnimeAnalysis.yaml`: Conda environment file for the project.
+- `config.yaml`: Project configuration file.
+- `data`: Directory for storing the data used in the analysis.
+- `modelos`: Directory containing the models and related files used in the analysis.
+- `src`: Directory containing the project's source code.
+- `styles.css`: CSS file for the web page design.
+- `PDF`: Working backwards, frequently asked questions, and project architecture.
 
 ## DEMO
 
 ![](https://github.com/JuanPalms/AnimeWebsite/blob/main/GIF_anime.gif)
 
 
-## Instrucciones para el uso del Repositorio
+## Instructions for Using the Repository
 
-1. Clona este repositorio en tu máquina local.
-2. Asegúrate de tener instalado el entorno de conda.
-3. Crea un nuevo entorno de conda utilizando el archivo `AnimeAnalysis.yaml`.
-4. Ejecuta los scripts y notebooks en la carpeta `src` para realizar el análisis y generar los resultados.
-5. Los datos procesados y los modelos generados se encuentran en las carpetas `data` y `modelos`, respectivamente.
-6. Despliega la página web utilizando Quarto ejecutando el comando adecuado según las instrucciones proporcionadas.
+    1. Clone this repository to your local machine.
+    2. Ensure that the Conda environment is installed.
+    3. Create a new Conda environment using the AnimeAnalysis.yaml file.
+    4. Run the scripts and notebooks in the src folder to perform the analysis and generate the results.
+    5. The processed data and generated models can be found in the data and modelos folders, respectively.
+    6. Deploy the web page using Quarto by executing the appropriate command as per the provided instructions.
 
-Para más detalles sobre la primera parte del proyecto, que incluye el webscraping de la página principal de anime y el ETL en AWS, consulta el siguiente repositorio: [Anime_ELT_dashboard](https://github.com/JuanPalms/Anime_ELT_dashboard).
+For more details about the first part of the project, which includes web scraping of the main anime page and ETL in AWS, refer to the following repository: [Anime_ELT_dashboard](https://github.com/JuanPalms/Anime_ELT_dashboard).
 
-## Página Web Generada
 
-La página web generada se encuentra en la carpeta `_site`. Puedes acceder a ella abriendo el archivo `index.html` en tu navegador.
+## Generated Web Page
 
-## Contribuciones
+The generated web page is located in the `_site` folder. You can access it by opening the `index.html` file in your browser.
 
-Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, asegúrate de seguir las pautas y enviar tus solicitudes de extracción.
+## Contributions
 
-¡Gracias por tu interés en este proyecto de anime!
+Contributions are welcome. If you wish to contribute to this project, make sure to follow the guidelines and submit your pull requests.
+
+Thank you for your interest in this anime project!
+
